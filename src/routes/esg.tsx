@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageTitle } from "@/components/AppShell";
+import { StudyFigure } from "@/components/StudyFigure";
 import { circular, esg, objetos, ods } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -40,18 +41,20 @@ function Esg() {
             <div className="space-y-1">{objetos.map((o, i) => <p key={o} className={cn("rounded px-2 py-1 text-xs transition", active.objetos.includes(i) ? "bg-primary text-primary-foreground" : "text-muted-foreground")}>{o}</p>)}</div>
           </div>
         </CardContent></Card>
+        <StudyFigure
+          src="/figuras/esg.png"
+          alt="Matriz ESG como integradora dos eixos ambiental, social e de governança."
+          caption="Figura 15: ESG – Environmental, Social, and Governance"
+        />
       </section>
 
       <section>
         <h2 className="mb-3 font-display text-2xl font-semibold">Triple Bottom Line</h2>
-        <div className="relative mx-auto h-72 max-w-md">
-          {[["Econômico", "Profit", "left-0 top-0 bg-primary/25"], ["Social", "People", "right-0 top-0 bg-warning/30"], ["Ambiental", "Planet", "left-1/2 bottom-0 -translate-x-1/2 bg-secondary/30"]].map(([n, e, c]) => (
-            <div key={n} className={cn("absolute flex h-48 w-48 flex-col items-center justify-center rounded-full mix-blend-multiply dark:mix-blend-screen", c)}>
-              <p className="font-display font-semibold">{n}</p><p className="text-xs text-muted-foreground">{e}</p>
-            </div>
-          ))}
-          <p className="absolute left-1/2 top-[45%] -translate-x-1/2 rounded bg-card px-2 py-1 text-xs font-semibold shadow">Sustentável</p>
-        </div>
+        <StudyFigure
+          src="/figuras/dimensoes.png"
+          alt="Dimensões econômica, social e ambiental do Triple Bottom Line, com pontos de observação e indicadores."
+          caption="Figura 16: Dimensões Econômica, Social e Ambiental"
+        />
       </section>
 
       <section>
@@ -64,6 +67,11 @@ function Esg() {
           ))}
         </div>
         <p className="mt-3 rounded-lg bg-secondary/10 p-4">{circular[step]!.t}</p>
+        <StudyFigure
+          src="/figuras/economiacircular.png"
+          alt="Estratégias de economia circular em ciclo fechado: reduzir, reutilizar, reparar e reciclar ou recuperar."
+          caption="Figura 17: Estratégias simplificadas da economia circular"
+        />
       </section>
 
       <section>
@@ -76,6 +84,11 @@ function Esg() {
             </CardContent></Card>
           ))}
         </div>
+        <StudyFigure
+          src="/figuras/ods.png"
+          alt="Relações dos ODS 8, 9, 12 e 13 com a Engenharia de Produção."
+          caption="Figura 18: Exemplos de ODS que podem ser citados na avaliação ENADE"
+        />
       </section>
     </div>
   );

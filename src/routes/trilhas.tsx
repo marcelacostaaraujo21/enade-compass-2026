@@ -5,8 +5,38 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageTitle } from "@/components/AppShell";
+import { StudyFigure } from "@/components/StudyFigure";
 import { eixos } from "@/lib/content";
 import { toggleIn, updateProgress, useProgress } from "@/lib/progress";
+
+const figurasEixos: Record<string, { src: string; alt: string; caption: string }> = {
+  "eixo-1": {
+    src: "/figuras/eixo1clima.png",
+    alt: "Mapa mental do Eixo I sobre mudanças climáticas, justiça climática, economia circular e direito à cidade.",
+    caption: "Figura 10: Eixo I: Socioambiental, Clima e Território",
+  },
+  "eixo-2": {
+    src: "/figuras/eixo2.png",
+    alt: "Mapa mental do Eixo II sobre ética, direitos humanos, equidade, acessibilidade, democracia e cidadania.",
+    caption: "Figura 11: Eixo II: Direitos, Equidade e Inclusão",
+  },
+  "eixo-3": {
+    src: "/figuras/eixo23.png",
+    alt: "Mapa mental dos Eixos III e IV sobre trabalho, saúde, Estado, inovação, tecnologia e globalização.",
+    caption: "Figura 12: Eixo III – Saúde, Trabalho e Estado e Eixo IV – Inovação, Globalização e Tecnologia",
+  },
+  "eixo-4": {
+    src: "/figuras/eixo4inova.png",
+    alt: "Esquema da governança ética da tecnologia e da IA com dados e LGPD, viés algorítmico e impactos no trabalho.",
+    caption: "Figura 13: Eixo IV: Inovação, Globalização e Tecnologia",
+  },
+};
+
+const figuraMobilidade = {
+  src: "/figuras/eixo1socio.png",
+  alt: "Esquema da relação entre mobilidade ativa, justiça territorial e direito à cidade.",
+  caption: "Figura 14: Eixo I: Socioambiental, Clima e Território – mobilidade e direito à cidade",
+};
 
 export const Route = createFileRoute("/trilhas")({
   head: () => ({
@@ -27,6 +57,7 @@ function Trilhas() {
       <PageTitle kicker="Portaria INEP nº 154/2026" title="Trilhas de conhecimento" desc="Os 12 objetos em 4 eixos integrados. Marque cada eixo como estudado." />
       {eixos.map((e) => {
         const done = p.eixos.includes(e.id);
+        const figura = figurasEixos[e.id];
         return (
           <Card key={e.id} id={e.id} className="scroll-mt-20">
             <CardContent className="p-6">
@@ -41,11 +72,15 @@ function Trilhas() {
                   {done ? <CheckCircle2 className="h-4 w-4" /> : <Circle className="h-4 w-4" />} {done ? "Estudado" : "Marcar estudado"}
                 </Button>
               </div>
+              {figura && <StudyFigure {...figura} />}
               <Accordion type="multiple" className="mt-4">
                 {e.topicos.map((t) => (
                   <AccordionItem key={t.nome} value={t.nome}>
                     <AccordionTrigger className="font-medium">{t.nome}</AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">{t.texto}</AccordionContent>
+                    <AccordionContent>
+                      <p className="text-muted-foreground">{t.texto}</p>
+                      {t.nome === "Mobilidade ativa" && <StudyFigure {...figuraMobilidade} />}
+                    </AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
