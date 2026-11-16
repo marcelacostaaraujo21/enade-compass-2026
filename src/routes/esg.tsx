@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageTitle } from "@/components/AppShell";
+import { StudyFigure } from "@/components/StudyFigure";
 import { circular, esg, objetos, ods } from "@/lib/content";
 import { cn } from "@/lib/utils";
 

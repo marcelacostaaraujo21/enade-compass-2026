@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageTitle } from "@/components/AppShell";
+import { StudyFigure } from "@/components/StudyFigure";
 import { eixos } from "@/lib/content";
 import { toggleIn, updateProgress, useProgress } from "@/lib/progress";
 
