@@ -77,7 +77,10 @@ function Trilhas() {
                 {e.topicos.map((t) => (
                   <AccordionItem key={t.nome} value={t.nome}>
                     <AccordionTrigger className="font-medium">{t.nome}</AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">{t.texto}</AccordionContent>
+                    <AccordionContent>
+                      <p className="text-muted-foreground">{t.texto}</p>
+                      {t.nome === "Mobilidade ativa" && <StudyFigure {...figuraMobilidade} />}
+                    </AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
