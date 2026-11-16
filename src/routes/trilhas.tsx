@@ -9,6 +9,35 @@ import { StudyFigure } from "@/components/StudyFigure";
 import { eixos } from "@/lib/content";
 import { toggleIn, updateProgress, useProgress } from "@/lib/progress";
 
+const figurasEixos: Record<string, { src: string; alt: string; caption: string }> = {
+  "eixo-1": {
+    src: "/figuras/eixo1clima.png",
+    alt: "Mapa mental do Eixo I sobre mudanças climáticas, justiça climática, economia circular e direito à cidade.",
+    caption: "Figura 10: Eixo I: Socioambiental, Clima e Território",
+  },
+  "eixo-2": {
+    src: "/figuras/eixo2.png",
+    alt: "Mapa mental do Eixo II sobre ética, direitos humanos, equidade, acessibilidade, democracia e cidadania.",
+    caption: "Figura 11: Eixo II: Direitos, Equidade e Inclusão",
+  },
+  "eixo-3": {
+    src: "/figuras/eixo23.png",
+    alt: "Mapa mental dos Eixos III e IV sobre trabalho, saúde, Estado, inovação, tecnologia e globalização.",
+    caption: "Figura 12: Eixo III – Saúde, Trabalho e Estado e Eixo IV – Inovação, Globalização e Tecnologia",
+  },
+  "eixo-4": {
+    src: "/figuras/eixo4inova.png",
+    alt: "Esquema da governança ética da tecnologia e da IA com dados e LGPD, viés algorítmico e impactos no trabalho.",
+    caption: "Figura 13: Eixo IV: Inovação, Globalização e Tecnologia",
+  },
+};
+
+const figuraMobilidade = {
+  src: "/figuras/eixo1socio.png",
+  alt: "Esquema da relação entre mobilidade ativa, justiça territorial e direito à cidade.",
+  caption: "Figura 14: Eixo I: Socioambiental, Clima e Território – mobilidade e direito à cidade",
+};
+
 export const Route = createFileRoute("/trilhas")({
   head: () => ({
     meta: [

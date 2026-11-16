@@ -41,18 +41,20 @@ function Esg() {
             <div className="space-y-1">{objetos.map((o, i) => <p key={o} className={cn("rounded px-2 py-1 text-xs transition", active.objetos.includes(i) ? "bg-primary text-primary-foreground" : "text-muted-foreground")}>{o}</p>)}</div>
           </div>
         </CardContent></Card>
+        <StudyFigure
+          src="/figuras/esg.png"
+          alt="Matriz ESG como integradora dos eixos ambiental, social e de governança."
+          caption="Figura 15: ESG – Environmental, Social, and Governance"
+        />
       </section>
 
       <section>
         <h2 className="mb-3 font-display text-2xl font-semibold">Triple Bottom Line</h2>
-        <div className="relative mx-auto h-72 max-w-md">
-          {[["Econômico", "Profit", "left-0 top-0 bg-primary/25"], ["Social", "People", "right-0 top-0 bg-warning/30"], ["Ambiental", "Planet", "left-1/2 bottom-0 -translate-x-1/2 bg-secondary/30"]].map(([n, e, c]) => (
-            <div key={n} className={cn("absolute flex h-48 w-48 flex-col items-center justify-center rounded-full mix-blend-multiply dark:mix-blend-screen", c)}>
-              <p className="font-display font-semibold">{n}</p><p className="text-xs text-muted-foreground">{e}</p>
-            </div>
-          ))}
-          <p className="absolute left-1/2 top-[45%] -translate-x-1/2 rounded bg-card px-2 py-1 text-xs font-semibold shadow">Sustentável</p>
-        </div>
+        <StudyFigure
+          src="/figuras/dimensoes.png"
+          alt="Dimensões econômica, social e ambiental do Triple Bottom Line, com pontos de observação e indicadores."
+          caption="Figura 16: Dimensões Econômica, Social e Ambiental"
+        />
       </section>
 
       <section>
