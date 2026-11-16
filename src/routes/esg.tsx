@@ -84,6 +84,11 @@ function Esg() {
             </CardContent></Card>
           ))}
         </div>
+        <StudyFigure
+          src="/figuras/ods.png"
+          alt="Relações dos ODS 8, 9, 12 e 13 com a Engenharia de Produção."
+          caption="Figura 18: Exemplos de ODS que podem ser citados na avaliação ENADE"
+        />
       </section>
     </div>
   );

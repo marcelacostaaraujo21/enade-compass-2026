@@ -72,6 +72,7 @@ function Trilhas() {
                   {done ? <CheckCircle2 className="h-4 w-4" /> : <Circle className="h-4 w-4" />} {done ? "Estudado" : "Marcar estudado"}
                 </Button>
               </div>
+              {figura && <StudyFigure {...figura} />}
               <Accordion type="multiple" className="mt-4">
                 {e.topicos.map((t) => (
                   <AccordionItem key={t.nome} value={t.nome}>
