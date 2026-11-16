@@ -57,6 +57,7 @@ function Trilhas() {
       <PageTitle kicker="Portaria INEP nº 154/2026" title="Trilhas de conhecimento" desc="Os 12 objetos em 4 eixos integrados. Marque cada eixo como estudado." />
       {eixos.map((e) => {
         const done = p.eixos.includes(e.id);
+        const figura = figurasEixos[e.id];
         return (
           <Card key={e.id} id={e.id} className="scroll-mt-20">
             <CardContent className="p-6">

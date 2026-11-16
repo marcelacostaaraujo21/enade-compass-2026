@@ -67,6 +67,11 @@ function Esg() {
           ))}
         </div>
         <p className="mt-3 rounded-lg bg-secondary/10 p-4">{circular[step]!.t}</p>
+        <StudyFigure
+          src="/figuras/economiacircular.png"
+          alt="Estratégias de economia circular em ciclo fechado: reduzir, reutilizar, reparar e reciclar ou recuperar."
+          caption="Figura 17: Estratégias simplificadas da economia circular"
+        />
       </section>
 
       <section>
